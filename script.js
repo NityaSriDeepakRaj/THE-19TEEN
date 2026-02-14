@@ -132,22 +132,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    gsap.utils.toArray('.glass-card').forEach((card, i) => {
-        gsap.from(card, {
+    // --- Tour Section Animations ---
+
+    // Tour Rows Slide In
+    gsap.utils.toArray('.tour-row').forEach((row, i) => {
+        gsap.from(row, {
             scrollTrigger: {
-                trigger: '.glass-gallery',
-                start: 'top 75%',
+                trigger: '.tour-table',
+                start: 'top 80%',
             },
-            scale: 0.9,
+            y: 30,
             opacity: 0,
-            duration: 0.8,
-            ease: 'back.out(1.7)',
-            delay: i * 0.2
+            duration: 0.6,
+            ease: 'power2.out',
+            delay: i * 0.1
         });
     });
+
+    // Mobile Video Loop logic remains if needed, but Hero setup is primary now.
 
     // Initial Entry Animation (Layer 1)
     gsap.from(".layer-1 .hero-title", { y: 30, opacity: 0, duration: 1, delay: 0.5 });
     gsap.from(".layer-1 .hero-subtitle", { y: 20, opacity: 0, duration: 1, delay: 0.8 });
+
+    // --- Back to Top Logic ---
+    // --- Back to Top Logic ---
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        // Show only after Hero section (which is pinned for 500% viewport)
+        // We use a safe buffer of 4.5x viewport height to ensure it appears just as we leave the hero
+        const heroThreshold = window.innerHeight * 4.5;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroThreshold) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to very start (Band Name)
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // --- Dynamic Navbar Background Logic ---
+    const navbar = document.querySelector('.navbar');
+    // Threshold matches the Hero pin duration exactly (500% = 5 * vh)
+    const navThreshold = window.innerHeight * 5;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > navThreshold) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 
 });

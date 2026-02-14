@@ -21,7 +21,11 @@
 
     <nav class="navbar">
         <div class="logo">the9teen</div>
-        <button class="join-btn">Join Crew</button>
+        <div class="nav-links">
+            <a href="#memories">Moments</a>
+            <a href="#tour">Tour</a>
+            <a href="#join-crew" class="join-btn">Join Crew</a>
+        </div>
     </nav>
 
     <main>
@@ -79,43 +83,189 @@
             </div>
         </section>
 
-        <!-- Viral Discography -->
-        <section class="discography-section" id="music">
-            <h2 class="section-title">Viral Hits</h2>
-            <div class="glass-gallery">
-                <div class="glass-card">
-                    <div class="glass-content">
-                        <h3>Hi (2023)</h3>
-                        <p>Our hit original single that captured hearts everywhere.</p>
-                        <button class="play-btn">Listen Now</button>
-                    </div>
+        <!-- Reflective Moments (Studio & Stage) -->
+        <section class="memories-section" id="memories">
+            <h2 class="section-title mem-title">REFLECTIVE MOMENTS</h2>
+
+            <!-- Part 1: Endless Memory Scroll -->
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <!-- Images duplicated for seamless loop -->
+                    <img src="frames/ezgif-frame-020.jpg" alt="Studio Session" class="memory-img">
+                    <img src="frames/ezgif-frame-040.jpg" alt="Jam Room" class="memory-img">
+                    <img src="frames/ezgif-frame-060.jpg" alt="Vizag Roads" class="memory-img">
+                    <img src="frames/ezgif-frame-080.jpg" alt="Live Percussion" class="memory-img">
+                    <img src="frames/ezgif-frame-100.jpg" alt="Backstage" class="memory-img">
+                    <img src="frames/ezgif-frame-120.jpg" alt="Soundcheck" class="memory-img">
+                    <img src="frames/ezgif-frame-140.jpg" alt="Acoustic Set" class="memory-img">
+                    <img src="frames/ezgif-frame-160.jpg" alt="Crowd Shot" class="memory-img">
+                    <!-- Duplicate Set -->
+                    <img src="frames/ezgif-frame-020.jpg" alt="Studio Session" class="memory-img">
+                    <img src="frames/ezgif-frame-040.jpg" alt="Jam Room" class="memory-img">
+                    <img src="frames/ezgif-frame-060.jpg" alt="Vizag Roads" class="memory-img">
+                    <img src="frames/ezgif-frame-080.jpg" alt="Live Percussion" class="memory-img">
+                    <img src="frames/ezgif-frame-100.jpg" alt="Backstage" class="memory-img">
+                    <img src="frames/ezgif-frame-120.jpg" alt="Soundcheck" class="memory-img">
+                    <img src="frames/ezgif-frame-140.jpg" alt="Acoustic Set" class="memory-img">
+                    <img src="frames/ezgif-frame-160.jpg" alt="Crowd Shot" class="memory-img">
                 </div>
-                <div class="glass-card">
-                    <div class="glass-content">
-                        <h3>Mashups</h3>
-                        <p>The acoustic Bollywood x English covers that went viral.</p>
-                        <button class="play-btn">Explore</button>
+            </div>
+
+            <!-- Part 2: Concert Highlights -->
+            <div class="highlight-feature">
+                <div class="highlight-card">
+                    <div class="play-icon-overlay">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="60" height="60">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Social Nation 2026</h3>
+                        <p>The performance that changed everything.</p>
+                        <button class="view-highlight-btn">View Highlight</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer-section" id="contact">
-            <div class="footer-content">
-                <h2>Join The Pirate Crew</h2>
-                <p>Be part of our journey. Exclusive updates, behind the scenes, and more.</p>
-                <form class="signup-form">
-                    <input type="email" placeholder="Your Email Address" required>
-                    <button type="submit">Board the Ship</button>
-                </form>
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                    <a href="#">Spotify</a>
+        <!-- High-Contrast Live Tour Section -->
+        <section class="tour-section" id="tour">
+            <!-- Background Image with Overlay -->
+            <div class="tour-bg"></div>
+
+            <div class="tour-content-container">
+                <h2 class="tour-main-title">LIVE TOUR</h2>
+
+                <div class="tour-table">
+                    <!-- Table Headers -->
+                    <div class="tour-row tour-headers">
+                        <div class="col-date">DATE</div>
+                        <div class="col-city">CITY</div>
+                        <div class="col-venue">VENUE</div>
+                        <div class="col-action">TICKETS</div>
+                    </div>
+
+                    <!-- Row 1 -->
+                    <div class="tour-row">
+                        <div class="col-date">OCT 15, 2026</div>
+                        <div class="col-city">MUMBAI</div>
+                        <div class="col-venue">Social Nation Festival</div>
+                        <div class="col-action"><button class="ticket-btn">GET TICKETS</button></div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="tour-row">
+                        <div class="col-date">OCT 18, 2026</div>
+                        <div class="col-city">VISAKHAPATNAM</div>
+                        <div class="col-venue">Beach Road Arena</div>
+                        <div class="col-action"><button class="ticket-btn">GET TICKETS</button></div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="tour-row">
+                        <div class="col-date">OCT 22, 2026</div>
+                        <div class="col-city">MUSCAT</div>
+                        <div class="col-venue">Grand Opera House</div>
+                        <div class="col-action"><button class="ticket-btn">GET TICKETS</button></div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="tour-row">
+                        <div class="col-date">OCT 25, 2026</div>
+                        <div class="col-city">DOHA</div>
+                        <div class="col-venue">Pearl Amphitheater</div>
+                        <div class="col-action"><button class="ticket-btn">GET TICKETS</button></div>
+                    </div>
                 </div>
-                <p class="copyright">&copy; 2026 the9teen. All rights reserved.</p>
             </div>
+
+        </section>
+
+        <!-- Footer -->
+        <!-- The 9Teen Footer -->
+        <footer class="footer-section" id="contact">
+            <!-- Massive Background Text -->
+            <div class="footer-bg-text">THE 9TEEN</div>
+
+            <div class="footer-container">
+                <!-- Column 1: Identity -->
+                <div class="footer-col brand-col">
+                    <h2 class="footer-logo">THE 9TEEN</h2>
+                    <p class="footer-tagline">Where Acoustic Soul Meets Viral Energy.</p>
+                </div>
+
+                <!-- Column 2: Explore -->
+                <div class="footer-col links-col">
+                    <h3>Explore</h3>
+                    <ul class="footer-nav">
+                        <li><a href="#bio">About</a></li>
+                        <li><a href="#music">Discography</a></li>
+                        <li><a href="#hero">Gallery</a></li>
+                        <li><a href="#tour">Tour</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Socials -->
+                <div class="footer-col social-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Spotify">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 11.5c4.5-2 9-1 9-1"></path>
+                                <path d="M8.5 14c3.5-1.5 7-1 7-1"></path>
+                                <path d="M9 16.5c2.5-1 5-1 5-1"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Stay Updated -->
+                <div class="footer-col subscribe-col" id="join-crew">
+                    <h3>Join the Crew</h3>
+                    <form class="footer-form">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 THE 9TEEN. ALL RIGHTS RESERVED.</p>
+            </div>
+
+            <!-- Back to Top Arrow -->
+            <a href="#" class="back-to-top" id="backToTop">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19V5"></path>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </a>
         </footer>
     </main>
 
