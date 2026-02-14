@@ -1,0 +1,402 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-teal: #008080;
+    --accent-orange: #FF8C00;
+    --accent-yellow: #FFD700;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.join-btn {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.join-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Pinned via GSAP */
+}
+
+/* Canvas Background */
+.hero-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Behind text */
+}
+
+#hero-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Content Layers */
+.hero-content {
+    position: absolute;
+    /* Stacked on top of each other */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 2rem;
+    z-index: 10;
+    text-align: center;
+    /* mix-blend-mode: overlay; Removed for better visibility */
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+.layer-2 {
+    opacity: 0;
+    /* Hidden by default, revealed by scroll */
+    transform: translate(-50%, -50%);
+    /* Centered */
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    /* Left and Right */
+    align-items: center;
+    gap: 4rem;
+    padding: 0 5%;
+}
+
+.story-block {
+    flex: 1;
+    background: rgba(18, 18, 18, 0.85);
+    /* Dark background for visibility */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    /* Reading alignment */
+    transition: transform 0.3s ease;
+}
+
+.story-block:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+}
+
+/* Typography */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--accent-yellow);
+    /* Yellow for main title */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #e0e0e0;
+    /* Off-white for description */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+    /* Boxed inline for readability */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.story-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-orange);
+    /* Orange for story titles */
+    text-shadow: none;
+    /* Clean look inside box */
+}
+
+.story-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cccccc;
+    /* Light grey for body */
+    text-shadow: none;
+    background: transparent;
+    /* Removed individual bg */
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Sections */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--text-color), #666);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Bio Section */
+.bio-section {
+    padding: 8rem 10%;
+    background: var(--bg-color);
+    position: relative;
+    z-index: 2;
+}
+
+.bio-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.bio-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    border-left: 1px solid var(--accent-teal);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+    transition: transform 0.3s ease;
+}
+
+.bio-card:nth-child(2) {
+    border-color: var(--accent-orange);
+}
+
+.bio-card:nth-child(3) {
+    border-color: var(--accent-yellow);
+}
+
+.bio-card:hover {
+    transform: translateY(-10px);
+}
+
+.bio-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.bio-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Discography Glassmorphism */
+.discography-section {
+    padding: 6rem 10%;
+    position: relative;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 128, 128, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 140, 0, 0.15) 0%, transparent 40%);
+}
+
+.glass-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 128, 128, 0.2);
+}
+
+.glass-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.play-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    background: var(--accent-teal);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-teal);
+}
+
+/* Footer (Pirate Crew) */
+.footer-section {
+    padding: 6rem 5%;
+    text-align: center;
+    background: #000;
+    position: relative;
+    border-top: 1px solid #222;
+}
+
+.signup-form {
+    margin: 2rem auto;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.signup-form input {
+    flex: 1;
+    padding: 1rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.signup-form button {
+    padding: 1rem 2rem;
+    background: var(--accent-orange);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.social-links {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--text-color);
+}
+
+.copyright {
+    margin-top: 2rem;
+    color: #444;
+    font-size: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .story-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .bio-grid {
+        flex-direction: column;
+    }
+
+    .layer-2 {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 4rem;
+        /* Give space from top */
+    }
+}
